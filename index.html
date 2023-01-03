@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TEXT BASE</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+    <script src="scripts/scripts.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <section class="settingsSection">
+      <div class="settingsBtn">
+      </div>
+      <div class="settingsNav">
+        <h3>Dialect</h3>
+        <nav class="dialectChoices">
+          <div class="diaBtn ameDia"></div>
+          <div class="diaBtn ausDia"></div>
+          <div class="diaBtn briDia"></div>
+          <div class="diaBtn canDia"></div>
+        </nav>
+        <hr width="80%" color="#6897c3"/>
+        <h3>Style</h3>
+        <nav class="domainChoices">
+          <p class="domBtn acaDom">Academic 📚</p>
+          <hr width="80%" color="#6897c3"/>
+          <p class="domBtn busDom">Business 👔</p>
+          <hr width="80%" color="#6897c3"/>
+          <p class="domBtn genDom">General 📝</p>
+          <hr width="80%" color="#6897c3"/>
+          <p class="domBtn maiDom">Mail 📧</p>
+          <hr width="80%" color="#6897c3"/>
+          <p class="domBtn casDom">Casual 🤙</p>
+          <hr width="80%" color="#6897c3"/>
+          <p class="domBtn creDom">Creative 🌈</p>
+        </nav>
+      </div>
+    </section>
+    <section class="inputSection">
+      <h1>TEXT BASE</h1>
+      <grammarly-editor-plugin>
+        <textarea id="textbox"></textarea>
+      </grammarly-editor-plugin>
+      <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_GGqJrzdsfvQj97GrDK1yvR"></script>
+    </section>
+    <section class="resultsSection">
+      <div class="status">
+        <p>Word Count</p>
+        <p id="wordCount">0</p>
+      </div>
+      <div class="status">
+        <p>Character Count</p>
+        <p id="charCount">0</p>
+      </div>
+      <div class="status">
+        <p>Dialect</p>
+        <div id="curDia"></div>
+        <hr width="80%" color="#6897c3"/>
+        <p>Style</p>
+        <p id="curDom">Academic 📚</p>
+      <div>
+    </section>
+  </body>
+</html>
