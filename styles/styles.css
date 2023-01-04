@@ -166,3 +166,6 @@ hr{
   margin-top:5px;
   margin-bottom:5px;
 }
+.status:has(#cpStatus){
+  background-color:#ff00004e;
+}
