@@ -1,3 +1,4 @@
+const sText = document.getElementById('cpStatus');//variable used to identify the main editor
 const text = document.getElementById('textbox');//variable used to identify the main editor
 const cpStatus = document.getElementsByClassName('copast')[0];//variable used to identify the copy/paste status
 
@@ -6,7 +7,8 @@ text.addEventListener('input', () => {//event occurs whenever the user types any
   document.getElementById('wordCount').textContent = getWordCount(taval);//updates the word counter with the value returned from a function
   document.getElementById('charCount').textContent = taval.length;//updates the DOM content with the vaue of the main text editor
   if(text.value == "") { document.getElementById('wordCount').textContent = '0'; }//updates the word counter to '0' when there's no words in the main editor
-  cpStatus.style.backgroundColor='#ff00004e';
+  cpStatus.style.backgroundColor='#ff00004e';//changes the status in the results setion
+  sText.textContent = 'Ctrl + C to copy';
 });
 
 //this is a function to detect ctrl + c to copy the contents of the man editor to the user's clipboard
@@ -16,7 +18,8 @@ document.body.addEventListener('keydown', function (mEv) {
   let ctrl = mEv.ctrlKey ? mEv.ctrlKey : ((key === 17) ? true : false);//Detecting Ctrl
   if (key == 67 && ctrl) {
     navigator.clipboard.writeText(text.value);//adds content of the main editor to the clipboard
-    cpStatus.style.backgroundColor = '#ffff004e';//changes the status of in the results section
+    cpStatus.style.backgroundColor = '#ffff004e';//changes the status in the results section
+    sText.textContent = 'Copied!';
   }
 }, false);
 
