@@ -1,11 +1,24 @@
 const text = document.getElementById('textbox');//variable used to identify the main editor
+const cpStatus = document.getElementsByClassName('copast')[0];//variable used to identify the copy/paste status
 
 text.addEventListener('input', () => {//event occurs whenever the user types anything in the main editor
   var taval = text.value;//variable used to take the value of the main editor
   document.getElementById('wordCount').textContent = getWordCount(taval);//updates the word counter with the value returned from a function
   document.getElementById('charCount').textContent = taval.length;//updates the DOM content with the vaue of the main text editor
   if(text.value == "") { document.getElementById('wordCount').textContent = '0'; }//updates the word counter to '0' when there's no words in the main editor
+  cpStatus.style.backgroundColor='#ff00004e';
 });
+
+//this is a function to detect ctrl + c to copy the contents of the man editor to the user's clipboard
+document.body.addEventListener('keydown', function (mEv) {
+  mEv = mEv || window.event;//defines the event object
+  let key = mEv.which || mEv.keyCode; //detect keycodes
+  let ctrl = mEv.ctrlKey ? mEv.ctrlKey : ((key === 17) ? true : false);//Detecting Ctrl
+  if (key == 67 && ctrl) {
+    navigator.clipboard.writeText(text.value);//adds content of the main editor to the clipboard
+    cpStatus.style.backgroundColor = '#ffff004e';//changes the status of in the results section
+  }
+}, false);
 
 function getWordCount(str) { return str.trim().split(/\s+/).length; }
 
