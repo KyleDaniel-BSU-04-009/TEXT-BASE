@@ -6,11 +6,13 @@
     <script src="scripts/scripts.js" type="text/javascript" defer></script>
   </head>
   <body>
+    <!-- the main wrapper for the settings -->
     <section class="settingsSection">
       <div class="settingsBtn">
       </div>
       <div class="settingsNav">
         <h3>Dialect</h3>
+        <!-- dialect selection navigator -->
         <nav class="dialectChoices">
           <div class="diaBtn ameDia"></div>
           <div class="diaBtn ausDia"></div>
@@ -19,6 +21,7 @@
         </nav>
         <hr width="80%" color="#6897c3"/>
         <h3>Style</h3>
+        <!-- style selection navigator -->
         <nav class="domainChoices">
           <p class="domBtn acaDom">Academic 📚</p>
           <hr width="80%" color="#6897c3"/>
@@ -34,29 +37,37 @@
         </nav>
       </div>
     </section>
+    <!-- the main wrapper for the text editor -->
     <section class="inputSection">
       <h1>TEXT BASE</h1>
+      <!-- the main text editor being monitored by grammarly -->
       <grammarly-editor-plugin>
         <textarea id="textbox"></textarea>
       </grammarly-editor-plugin>
       <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_GGqJrzdsfvQj97GrDK1yvR"></script>
     </section>
+    <!-- the main wrapper that displays results -->
     <section class="resultsSection">
+      <!-- word count display -->
       <div class="status">
         <p>Word Count</p>
         <p id="wordCount">0</p>
       </div>
+      <!-- character count display -->
       <div class="status">
         <p>Character Count</p>
         <p id="charCount">0</p>
       </div>
       <div class="status">
+        <!-- selected dialect display -->
         <p>Dialect</p>
         <div id="curDia"></div>
         <hr width="80%" color="#6897c3"/>
+        <!-- selected style display -->
         <p>Style</p>
         <p id="curDom">Academic 📚</p>
       </div>
+      <!-- copy and paste status -->
       <div class="status copast">
         <p id="cpStatus">Ctrl + C to copy</p>
       </div>
